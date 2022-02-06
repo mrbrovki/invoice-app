@@ -1,4 +1,25 @@
+/* Works on Firefox */
 * {
   margin: 0;
   box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: #f8f8f8 #1e2139;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #f8f8f8;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #1e2139;
+  border-radius: 20px;
+  border: 3px solid #f8f8f8;
+}
+body {
+  overflow-x: hidden;
 }
