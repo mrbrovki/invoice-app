@@ -1,5 +1,7 @@
 .main {
-  transition: 0.2s all;
+  width: 100vw;
+  height: 100vh;
+  transition: 0.2s background-color;
 }
 .main-light {
   background-color: #f8f8f8;
