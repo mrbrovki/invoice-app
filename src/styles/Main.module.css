@@ -1,0 +1,9 @@
+.main {
+  transition: 0.2s all;
+}
+.main-light {
+  background-color: #f8f8f8;
+}
+.main-dark {
+  background-color: #141625;
+}

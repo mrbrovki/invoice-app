@@ -1,14 +1,13 @@
-import React from 'react';
+import React, {createContext} from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 //pages
-import Home from './components/pages/Home';
-import Layout from './components/pages/Layout';
-import InvoicePage from './components/pages/InvoicePage';
+import Home from './pages/Home';
+import Layout from './pages/Layout';
+import InvoicePage from './pages/InvoicePage';
 //styles
-import './App.css';
+import '../styles/App.module.css';
 
 const App = () => {
-
   return (
     <>
     <BrowserRouter>
