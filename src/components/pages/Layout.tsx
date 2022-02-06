@@ -1,5 +1,6 @@
 import React, {createContext} from 'react';
 import Main from '../Main';
+import Header from '../Header';
 import useColorMode from '../../useColorMode';
 interface ContextInit{
   mode: String;
@@ -11,6 +12,7 @@ const Layout = () => {
   return (
    <>
    <Context.Provider value={{mode, changeMode}} >
+     <Header />
     <Main/>
    </Context.Provider>
    </>

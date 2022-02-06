@@ -1,6 +1,10 @@
 .main {
   width: 100vw;
   min-height: 100vh;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
   transition: 0.2s background-color;
 }
 .main-light {

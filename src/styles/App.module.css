@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&family=Spartan:wght@300;400;500;600;700;900&display=swap");
+
 /* Works on Firefox */
 * {
   margin: 0;
@@ -21,5 +23,6 @@
   border: 3px solid #f8f8f8;
 }
 body {
+  font-family: "Spartan", sans-serif !important;
   overflow-x: hidden;
 }

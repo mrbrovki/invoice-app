@@ -1,0 +1,101 @@
+.f-c {
+  display: flex;
+}
+.home {
+  width: calc(40vw + 20rem);
+}
+.invoices-header {
+  justify-content: space-between;
+}
+.invoices-header h1 {
+  color: #fff;
+}
+.invoices-header h1::after {
+  content: "There are 6 invoices";
+  display: block;
+  font-size: 0.8rem;
+  color: #a9a9a9;
+}
+.filter-by {
+  position: relative;
+  margin-right: 2.5rem;
+  width: 7.5rem;
+  justify-content: space-between;
+  align-items: center;
+}
+.filter-by p::before {
+  font-size: 0.8rem;
+  content: "Filter by status";
+  color: #fff;
+}
+.filter-by:hover {
+  cursor: pointer;
+}
+.status-choices {
+  position: absolute;
+  top: 4rem;
+  border-radius: 0.8rem;
+  background-color: #252944;
+  color: #fff;
+  text-align: center;
+  max-height: 10rem;
+  width: 10rem;
+  transition: max-height 0.3s;
+  overflow: hidden;
+}
+.hidden {
+  max-height: 0;
+}
+.status-choices div {
+  font-size: 0.8rem;
+  line-height: 3rem;
+}
+.new-invoice-btn {
+  background-color: #7c5efa;
+  width: 10rem;
+  height: 3rem;
+  border-radius: 2rem;
+  color: #fff;
+}
+.new-invoice-btn:hover {
+  cursor: pointer;
+}
+.new-invoice-btn p::before {
+  font-size: 0.9rem;
+  content: "New Invoice";
+  color: #fff;
+  font-weight: 500;
+  line-height: 3rem;
+}
+.plus-circle {
+  margin: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .invoices-header h1 {
+    font-size: 1.4rem;
+  }
+  .invoices-header h1::after {
+    content: "6 invoices";
+    font-weight: 500;
+  }
+  .filter-by {
+    width: 5rem;
+  }
+  .filter-by p::before {
+    content: "Filter";
+  }
+  .new-invoice-btn {
+    width: 6.5rem;
+  }
+  .new-invoice-btn p::before {
+    content: "New";
+  }
+}
