@@ -1,0 +1,46 @@
+.invoice {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) 8rem 0.5rem;
+  align-items: center;
+  width: 100%;
+  text-decoration: none;
+  line-height: 5rem;
+  background-color: #1e2139;
+  border-radius: 0.8rem;
+  margin: 1rem;
+  padding: 0 2rem;
+}
+.total {
+  color: #fff;
+  font-weight: 600;
+}
+.status-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 7rem;
+  line-height: 2.5rem;
+  border-radius: 0.5rem;
+  background-color: aliceblue;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.light {
+  background-color: #3fd7a225;
+  color: #3fd7a1;
+}
+.status-container p {
+  margin: 0.2rem;
+}
+.circle {
+  margin: 0.2rem;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background-color: black;
+}
+
+.arrow-right {
+  transform: scale(1.25);
+}
