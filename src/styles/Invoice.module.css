@@ -5,13 +5,38 @@
   width: 100%;
   text-decoration: none;
   line-height: 5rem;
-  background-color: #1e2139;
   border-radius: 0.8rem;
   margin: 1rem;
   padding: 0 2rem;
 }
-.total {
+.invoice-light {
+  background-color: #fff;
+}
+.invoice-dark {
+  background-color: #1e2139;
+}
+
+.id,
+.due,
+.name {
+  font-size: 0.8rem;
+}
+.id-light,
+.total-light {
+  color: rgb(0, 0, 0);
+}
+.id-dark,
+.total-dark {
   color: #fff;
+}
+.id span {
+  color: rgb(155, 155, 155);
+}
+.due,
+.name {
+  color: rgb(155, 155, 155);
+}
+.total {
   font-weight: 600;
 }
 .status-container {
@@ -21,14 +46,21 @@
   width: 7rem;
   line-height: 2.5rem;
   border-radius: 0.5rem;
-  background-color: aliceblue;
   font-size: 0.8rem;
   font-weight: 700;
   text-transform: capitalize;
 }
-.light {
+.paid {
   background-color: #3fd7a225;
   color: #3fd7a1;
+}
+.pending {
+  background-color: #f7890220;
+  color: #f78a02;
+}
+.draft {
+  background-color: #7d7d7d3a;
+  color: #7d7d7d;
 }
 .status-container p {
   margin: 0.2rem;
@@ -38,9 +70,16 @@
   width: 0.6rem;
   height: 0.6rem;
   border-radius: 50%;
+}
+.circle-paid {
   background-color: #3fd7a1;
 }
-
+.circle-pending {
+  background-color: #f78a02;
+}
+.circle-draft {
+  background-color: #7d7d7d;
+}
 .arrow-right {
   transform: scale(1.25);
 }

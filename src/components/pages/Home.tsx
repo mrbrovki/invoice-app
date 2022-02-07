@@ -1,7 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useContext} from 'react';
 import styles from '../../styles/Home.module.css';
 import useFetch from '../../useFetch';
 import Invoice from '../Invoice';
+import { Context } from './Layout';
 interface Data{
   id?: String;
   paymentDue?: String;
@@ -10,27 +11,28 @@ interface Data{
   status?: String;
 }
 const Home = () => {
+  const {mode} = useContext(Context);
   const [visibility, setVisibility] = useState('hidden');
   const [invoices, setInvoices] = useState([] as Array<JSX.Element>); 
   const data = useFetch('/data.json').data as Array<Object>;
   useEffect(()=>{
     if(data){
       setInvoices(data.map((el: Data, index)=>{
-      return(<Invoice key={index} id={el.id} paymentDue={el.paymentDue} clientName={el.clientName} total={el.total} status={el.status} />)
+      return(<Invoice key={index} id={el.id} paymentDue={el.paymentDue} clientName={el.clientName} total={el.total} status={el.status}/>)
     }));
   }
 }, [data]);
   return (
     <div className={styles.home}>
-      <div className={styles['f-c'] + ' ' + styles['invoices-header']}>
+      <div className={styles['f-c'] + ' ' + styles['invoices-header-' + mode]}>
         <div>
           <h1>Invoices</h1>
         </div>
         <div className={styles['f-c']}>
-         <div onMouseOver={()=>setVisibility('shown')} onMouseOut={()=>setVisibility('hidden')} className={styles['f-c'] + ' ' + styles['filter-by']}>
+         <div onMouseOver={()=>setVisibility('shown')} onMouseOut={()=>setVisibility('hidden')} className={styles['f-c'] + ' ' + styles['filter-by'] + ' ' + styles['filter-' + mode]}>
             <p></p>
             <img src='/assets/icon-arrow-down.svg' alt='arrow'/>
-            <div className={styles['status-choices'] + ' ' + styles[visibility]}>
+            <div className={styles['status-choices'] + ' ' + styles[visibility] + ' '+ styles['status-choices-' + mode]}>
               <div>Draft</div>
               <div>Pending</div>
               <div>Paid</div>
