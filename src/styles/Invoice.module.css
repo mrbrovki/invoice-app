@@ -1,13 +1,14 @@
 .invoice {
   display: grid;
-  grid-template-columns: repeat(4, 1fr) 8rem 0.5rem;
   align-items: center;
-  width: 100%;
+  grid-template-columns: repeat(4, 1fr) 8rem 0.5rem;
   text-decoration: none;
   line-height: 5rem;
   border-radius: 0.8rem;
-  margin: 1rem;
+  margin-top: 1rem;
   padding: 0 2rem;
+  border: 2px solid #7d5efa00;
+  transition: border-color 0.3s;
 }
 .invoice-light {
   background-color: #fff;
@@ -15,70 +16,87 @@
 .invoice-dark {
   background-color: #1e2139;
 }
-
+.invoice:hover {
+  border-color: #7c5efa;
+}
+/* id due name total */
 .id,
 .due,
 .name {
   font-size: 0.8rem;
 }
-.id-light,
-.total-light {
-  color: rgb(0, 0, 0);
-}
-.id-dark,
-.total-dark {
-  color: #fff;
-}
-.id span {
-  color: rgb(155, 155, 155);
-}
 .due,
-.name {
-  color: rgb(155, 155, 155);
+.name,
+.id span {
+  opacity: 0.6;
 }
 .total {
   font-weight: 600;
 }
+/* id due name total MODE */
+.id-light,
+.total-light,
+.due-light,
+.name-light {
+  color: #000000;
+}
+.id-dark,
+.total-dark,
+.due-dark,
+.name-dark {
+  color: #fff;
+}
+
+/* status container */
 .status-container {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 7rem;
-  line-height: 2.5rem;
+  height: 2.5rem;
   border-radius: 0.5rem;
   font-size: 0.8rem;
   font-weight: 700;
   text-transform: capitalize;
 }
-.paid {
-  background-color: #3fd7a225;
-  color: #3fd7a1;
-}
-.pending {
-  background-color: #f7890220;
-  color: #f78a02;
-}
-.draft {
-  background-color: #7d7d7d3a;
-  color: #7d7d7d;
-}
 .status-container p {
-  margin: 0.2rem;
+  margin-left: 0.2rem;
 }
+
+/* status */
 .circle {
   margin: 0.2rem;
   width: 0.6rem;
   height: 0.6rem;
   border-radius: 50%;
 }
-.circle-paid {
+.paid {
+  background-color: #3fd7a225;
+  color: #3fd7a1;
+}
+.paid .circle {
   background-color: #3fd7a1;
 }
-.circle-pending {
+.pending {
+  background-color: #f7890220;
+  color: #f78a02;
+}
+.pending .circle {
   background-color: #f78a02;
 }
-.circle-draft {
-  background-color: #7d7d7d;
+.draft-light {
+  color: #000;
+  background-color: rgba(0, 0, 0, 0.036);
+}
+.draft-light .circle {
+  background-color: #000;
+}
+.draft-dark {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.057);
+}
+.draft-dark .circle {
+  background-color: #fff;
 }
 .arrow-right {
   transform: scale(1.25);

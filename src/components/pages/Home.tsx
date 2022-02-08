@@ -1,19 +1,19 @@
-import React, {useEffect, useState, useContext} from 'react';
+import React, {useEffect, useState, useContext, FC} from 'react';
 import styles from '../../styles/Home.module.css';
 import useFetch from '../../useFetch';
 import Invoice from '../Invoice';
 import { Context } from './Layout';
 interface Data{
-  id?: String;
-  paymentDue?: String;
-  clientName?: String;
-  total?: Number;
-  status?: String;
+  id?: string;
+  paymentDue?: string;
+  clientName?: string;
+  total?: number;
+  status?: string;
 }
 const Home = () => {
   const {mode} = useContext(Context);
   const [visibility, setVisibility] = useState('hidden');
-  const [invoices, setInvoices] = useState([] as Array<JSX.Element>); 
+  const [invoices, setInvoices] = useState([] as JSX.Element[]); 
   const data = useFetch('/data.json').data as Array<Object>;
   useEffect(()=>{
     if(data){
