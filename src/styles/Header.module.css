@@ -1,6 +1,7 @@
 .header {
   background-color: #1e2139;
   position: fixed;
+  z-index: 12;
   border-radius: 0 1.5rem 1.5rem 0;
   width: 103px;
   height: 100vh;
