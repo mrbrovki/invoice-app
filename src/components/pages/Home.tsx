@@ -29,7 +29,9 @@ const Home = () => {
           <h1>Invoices</h1>
         </div>
         <div className={styles['f-c']}>
-         <div onMouseOver={()=>setVisibility('shown')} onMouseOut={()=>setVisibility('hidden')} className={styles['f-c'] + ' ' + styles['filter-by'] + ' ' + styles['filter-' + mode]}>
+         <div onClick={() => 
+         setVisibility(prev => prev === 'hidden' ? 'shown' : 'hidden')} 
+         className={styles['f-c'] + ' ' + styles['filter-by'] + ' ' + styles['filter-' + mode]}>
             <p></p>
             <img src='/assets/icon-arrow-down.svg' alt='arrow'/>
             <div className={styles['status-choices'] + ' ' + styles[visibility] + ' '+ styles['status-choices-' + mode]}>
