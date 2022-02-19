@@ -1,4 +1,4 @@
-import React, {createContext} from 'react';
+import {FC} from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 //pages
 import Home from './pages/Home';
@@ -7,7 +7,7 @@ import InvoicePage from './pages/InvoicePage';
 //styles
 import '../styles/App.module.css';
 
-const App = () => {
+const App:FC = () => {
   return (
     <>
     <BrowserRouter>

@@ -1,6 +1,6 @@
-import React from 'react';
+import {FC} from 'react';
 
-const Edit = () => {
+const Edit:FC= () => {
   return <div></div>;
 };
 

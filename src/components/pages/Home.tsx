@@ -1,27 +1,51 @@
-import React, {useEffect, useState, useContext, FC} from 'react';
+import React, {FC, useContext, useEffect, useState} from 'react';
 import styles from '../../styles/Home.module.css';
-import useFetch from '../../useFetch';
+import useFetch from '../../hooks/useFetch';
+import Filter from '../Filter';
 import Invoice from '../Invoice';
 import { Context } from './Layout';
-interface Data{
+
+interface InvoiceData{
   id?: string;
   paymentDue?: string;
   clientName?: string;
   total?: number;
   status?: string;
 }
-const Home = () => {
+interface FetchReturn{
+  data?: InvoiceData[];
+  error?: Error;
+  
+}
+
+const Home:FC = () => {
   const {mode} = useContext(Context);
-  const [visibility, setVisibility] = useState('hidden');
-  const [invoices, setInvoices] = useState([] as JSX.Element[]); 
-  const data = useFetch('/data.json').data as Array<Object>;
+  const {data, error}:FetchReturn = useFetch('/data.json');
+  const [invoices, setInvoices] = useState([] as JSX.Element[]);
+  const [filter, setFilter] = useState(""); 
+  
+  const changeFilter = (newFilter: string) =>{
+    if(filter === newFilter){
+      setFilter("");
+    }else{
+      setFilter(newFilter);
+    }
+    setInvoices([]);
+  };
+
   useEffect(()=>{
-    if(data){
-      setInvoices(data.map((el: Data, index)=>{
-      return(<Invoice key={index} id={el.id} paymentDue={el.paymentDue} clientName={el.clientName} total={el.total} status={el.status}/>)
-    }));
-  }
-}, [data]);
+    if(!data){return;}
+    data.forEach(invoice=>{
+      if(!filter){
+        setInvoices(prev => [...prev, <Invoice key={invoice.id} {...invoice}/>]);
+      }
+      else{
+        if(invoice.status === filter){
+          setInvoices(prev => [...prev, <Invoice key={invoice.id} {...invoice}/>]);
+        }        
+      }
+    })
+  }, [data, filter])
   return (
     <div className={styles.home}>
       <div className={styles['f-c'] + ' ' + styles['invoices-header-' + mode]}>
@@ -29,17 +53,7 @@ const Home = () => {
           <h1>Invoices</h1>
         </div>
         <div className={styles['f-c']}>
-         <div onClick={() => 
-         setVisibility(prev => prev === 'hidden' ? 'shown' : 'hidden')} 
-         className={styles['f-c'] + ' ' + styles['filter-by'] + ' ' + styles['filter-' + mode]}>
-            <p></p>
-            <img src='/assets/icon-arrow-down.svg' alt='arrow'/>
-            <div className={styles['status-choices'] + ' ' + styles[visibility] + ' '+ styles['status-choices-' + mode]}>
-              <div>Draft</div>
-              <div>Pending</div>
-              <div>Paid</div>
-            </div>
-          </div>
+          <Filter mode={mode as string} changeFilter={(newFilter: string) => {changeFilter(newFilter)}}/>
           <div className={styles['new-invoice-btn'] + ' ' + styles['f-c']}>
             <div className={styles['plus-circle']}>
               <img src='/assets/icon-plus.svg' alt='plus icon'/>
@@ -48,7 +62,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      {invoices}
+      {data !== undefined && invoices }
     </div>
   );
 };

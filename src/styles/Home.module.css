@@ -2,7 +2,8 @@
   display: flex;
 }
 .home {
-  margin-top: 5rem;
+  height: 100%;
+  margin: 5rem 0 5rem;
   width: calc(40vw + 20rem);
 }
 .invoices-header-dark,
@@ -22,55 +23,7 @@
   font-size: 0.8rem;
   color: #a9a9a9;
 }
-.filter-by {
-  position: relative;
-  margin-right: 2.5rem;
-  width: 7.5rem;
-  justify-content: space-between;
-  align-items: center;
-}
-.filter-light p::before {
-  font-size: 0.8rem;
-  content: "Filter by status";
-  color: rgb(0, 0, 0);
-}
-.filter-dark p::before {
-  font-size: 0.8rem;
-  content: "Filter by status";
-  color: #fff;
-}
 
-.filter-by:hover {
-  cursor: pointer;
-}
-
-.status-choices {
-  position: absolute;
-  z-index: 10;
-  top: 4rem;
-  border-radius: 0.8rem;
-  box-shadow: 0 0 10px #00000030;
-  text-align: center;
-  max-height: 10rem;
-  width: 10rem;
-  transition: max-height 0.3s;
-  overflow: hidden;
-}
-.status-choices-light {
-  background-color: #fff;
-  color: #252944;
-}
-.status-choices-dark {
-  background-color: #252944;
-  color: #fff;
-}
-.hidden {
-  max-height: 0;
-}
-.status-choices div {
-  font-size: 0.8rem;
-  line-height: 3rem;
-}
 .new-invoice-btn {
   background-color: #7c5efa;
   width: 10rem;
@@ -108,9 +61,6 @@
   .home {
     margin-top: 5rem;
   }
-  .status-choices {
-    right: -3rem;
-  }
   .invoices-header-light h1,
   .invoices-header-dark h1 {
     font-size: 1.4rem;
@@ -120,12 +70,7 @@
     content: "6 invoices";
     font-weight: 500;
   }
-  .filter-by {
-    width: 3.5rem;
-  }
-  .filter-by p::before {
-    content: "Filter";
-  }
+
   .new-invoice-btn {
     width: 6.5rem;
   }

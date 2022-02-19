@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
-const InvoicePage = () => {
+const InvoicePage:FC = () => {
   const navigate = useNavigate();
   const {id} = useParams();
   console.log(id)

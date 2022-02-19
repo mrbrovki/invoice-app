@@ -1,4 +1,4 @@
-import {useContext} from 'react';
+import {FC, useContext} from 'react';
 import { Link } from 'react-router-dom';
 import { Context } from './pages/Layout';
 import { monthArr } from '../monthArr';
@@ -13,7 +13,7 @@ interface Props{
   status?: string;
 };
 
-const Invoice = ({id, paymentDue, clientName, total, status}: Props) => {
+const Invoice:FC<Props> = ({id, paymentDue, clientName, total, status}) => {
   const {mode} = useContext(Context);
   const date = new Date(paymentDue as string);
   const addComma = (num: string) =>{

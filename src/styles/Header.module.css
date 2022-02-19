@@ -13,12 +13,16 @@
 .f-c {
   display: flex;
 }
-.sun-avatar {
+.mode-avatar {
   flex-flow: column nowrap;
   align-items: center;
 }
-.sun {
+.mode-icon {
   margin: 1rem;
+}
+.mode-icon:hover {
+  cursor: pointer;
+  filter: brightness(2) drop-shadow(0 0 1rem #fff);
 }
 .avatar-image {
   width: 5rem;
@@ -44,7 +48,7 @@
     border-radius: 0;
     flex-flow: row nowrap;
   }
-  .sun-avatar {
+  .mode-avatar {
     flex-flow: row nowrap;
   }
   .logo {
