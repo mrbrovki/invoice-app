@@ -22,28 +22,23 @@ const Home:FC = () => {
   const {mode} = useContext(Context);
   const {data, error}:FetchReturn = useFetch('/data.json');
   const [invoices, setInvoices] = useState([] as JSX.Element[]);
-  const [filter, setFilter] = useState(""); 
+  const [filter, setFilter] = useState(['paid', 'pending', 'draft'] as string[]); 
   
-  const changeFilter = (newFilter: string) =>{
-    if(filter === newFilter){
-      setFilter("");
+  const addFilter = (newFilter: string) =>{
+    if(filter.includes(newFilter)){
+      setFilter(prev => prev.filter(el => el !== newFilter));
     }else{
-      setFilter(newFilter);
+      setFilter(prev => [...prev, newFilter]);
     }
     setInvoices([]);
   };
 
   useEffect(()=>{
     if(!data){return;}
-    data.forEach(invoice=>{
-      if(!filter){
-        setInvoices(prev => [...prev, <Invoice key={invoice.id} {...invoice}/>]);
-      }
-      else{
-        if(invoice.status === filter){
+    data.forEach(invoice => {
+        if(filter.includes(invoice.status as string)){
           setInvoices(prev => [...prev, <Invoice key={invoice.id} {...invoice}/>]);
         }        
-      }
     })
   }, [data, filter])
   return (
@@ -53,7 +48,7 @@ const Home:FC = () => {
           <h1>Invoices</h1>
         </div>
         <div className={styles['f-c']}>
-          <Filter mode={mode as string} changeFilter={(newFilter: string) => {changeFilter(newFilter)}}/>
+          <Filter mode={mode as string} addFilter={(newFilter: string) => {addFilter(newFilter)}}/>
           <div className={styles['new-invoice-btn'] + ' ' + styles['f-c']}>
             <div className={styles['plus-circle']}>
               <img src='/assets/icon-plus.svg' alt='plus icon'/>

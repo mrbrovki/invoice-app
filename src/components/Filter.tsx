@@ -3,7 +3,7 @@ import styles from '../styles/Filter.module.css';
 
 interface Params{
  mode: string;
- changeFilter: Function;
+ addFilter: Function;
 }
 
 const Filter:FC<Params> = (props) => {
@@ -16,9 +16,26 @@ const Filter:FC<Params> = (props) => {
     <p></p>
     <img src='/assets/icon-arrow-down.svg' alt='arrow'/>
     <div className={styles['status-choices'] + ' ' + styles['status-choices-' + mode] + ' ' + styles[visibility]}>
-      <div onClick={() => props.changeFilter("draft")}>Draft</div>
-      <div onClick={() => props.changeFilter("pending")}>Pending</div>
-      <div onClick={() => props.changeFilter("paid")}>Paid</div>
+      <div className={styles.choice}>
+        <label htmlFor='draft' className={styles.choice}>
+        <input type='checkbox' id='draft' name='filter' value='draft' 
+        onClick={() => props.addFilter("pending")} defaultChecked/>
+          Pending
+        </label>
+      </div>
+      <div className={styles.choice}>
+        <label htmlFor='pending'>
+        <input type='checkbox' id='pending' name='filter' value='pending' onClick={() => props.addFilter("draft")} defaultChecked/>
+          Draft
+        </label>
+      </div>
+      <div className={styles.choice}>
+        <label htmlFor='paid'>
+        <input type='checkbox' id='paid' name='filter' value='paid' onClick={() => props.addFilter("paid")} defaultChecked/>
+          Paid
+      </label>
+      </div>
+      
     </div>
   </div>
   )
