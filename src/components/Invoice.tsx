@@ -13,10 +13,7 @@ interface Props{
   status?: string;
 };
 
-const Invoice:FC<Props> = ({id, paymentDue, clientName, total, status}) => {
-  const {mode} = useContext(Context);
-  const date = new Date(paymentDue as string);
-  const addComma = (num: string) =>{
+export const addComma = (num: string) =>{
    const numArr = num.split('');
    const newArr = [];
    for(let i = numArr.length - 1; i > 0; i--){
@@ -28,6 +25,10 @@ const Invoice:FC<Props> = ({id, paymentDue, clientName, total, status}) => {
    newArr.unshift(numArr[0]);
    return newArr.join('');
   };
+const Invoice:FC<Props> = ({id, paymentDue, clientName, total, status}) => {
+  const {mode} = useContext(Context);
+  const date = new Date(paymentDue as string);
+
   
   return (
     <Link to={'/invoice/' + id} className={styles.invoice + ' ' + styles['invoice-' + mode]}>

@@ -1,0 +1,143 @@
+.invoice_header_dark,
+.invoice_header_light {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 5.5rem;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+}
+.invoice_info_dark,
+.invoice_info_light {
+  height: 30rem;
+  border-radius: 0.5rem;
+}
+
+.invoice_header_dark,
+.invoice_header_light,
+.invoice_info_dark,
+.invoice_info_light {
+  width: calc(40vw + 20rem);
+  color: #a9acbd;
+}
+
+.invoice_header_dark {
+  background-color: #1e2139;
+}
+.invoice_info_dark {
+  background-color: #1e2139;
+}
+
+.invoice_header_light {
+  background-color: #ffffff;
+}
+.invoice_info_light {
+  background-color: #ffffff;
+}
+.invoice_container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+.status {
+  font-size: 0.8rem;
+}
+/* status container */
+.status-container {
+  margin-left: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 7rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.status-container p {
+  margin-left: 0.2rem;
+}
+
+/* status */
+.circle {
+  margin: 0.2rem;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+}
+.paid {
+  background-color: #3fd7a225;
+  color: #3fd7a1;
+}
+.paid .circle {
+  background-color: #3fd7a1;
+}
+.pending {
+  background-color: #f7890220;
+  color: #f78a02;
+}
+.pending .circle {
+  background-color: #f78a02;
+}
+.draft-light {
+  color: #000;
+  background-color: rgba(0, 0, 0, 0.036);
+}
+.draft-light .circle {
+  background-color: #000;
+}
+.draft-dark {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.057);
+}
+.draft-dark .circle {
+  background-color: #fff;
+}
+.items_container {
+  margin-top: 5rem;
+  margin: 3rem;
+  overflow: hidden;
+  min-height: 7rem;
+  background-color: #252944;
+  border-radius: 0.8rem;
+}
+.items {
+  display: grid;
+  padding: 2rem;
+  grid-template-columns: 20rem 1fr 1fr 1fr;
+}
+.items > p {
+  font-size: 0.7rem;
+  text-align: right;
+}
+.item {
+  margin-top: 1rem;
+  width: calc(40vw + 10rem);
+  display: grid;
+  color: #fff;
+  grid-template-columns: 20rem repeat(3, 1fr);
+}
+.item p {
+  text-align: right;
+}
+
+.amount_container {
+  display: flex;
+  color: #fff;
+  line-height: 3rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  background-color: #000;
+}
+@media screen and (max-width: 1200px) {
+  .invoice_header_dark,
+  .invoice_header_light,
+  .invoice_info_dark,
+  .invoice_info_light {
+    width: 90vw;
+  }
+}
