@@ -15,7 +15,6 @@ interface InvoiceData{
 interface FetchReturn{
   data?: InvoiceData[];
   error?: Error;
-  
 }
 
 const Home:FC = () => {
