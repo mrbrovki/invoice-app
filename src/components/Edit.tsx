@@ -1,7 +1,9 @@
-import {FC} from 'react';
+import React from 'react'
 
-const Edit:FC= () => {
-  return <div></div>;
-};
+const Edit = () => {
+  return (
+    <div>Edit</div>
+  )
+}
 
-export default Edit;
+export default Edit

@@ -1,25 +1,23 @@
-import {FC} from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-//pages
-import Home from './pages/Home';
-import Layout from './pages/Layout';
-import InvoicePage from './pages/InvoicePage';
-//styles
-import '../styles/App.module.css';
+import AppContext from '../context';
+import Home from '../pages/Home';
+import InvoicePage from '../pages/InvoicePage';
+import Layout from './Layout';
 
-const App:FC = () => {
+
+const App = () => {
   return (
-    <>
-    <BrowserRouter>
-      <Routes>
+    <AppContext>
+      <BrowserRouter>
+        <Routes>
         <Route path='/' element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path='invoice/:id' element={<InvoicePage />} />
+          <Route path='username/:id' element={<InvoicePage />} />
         </Route>
       </Routes>
-    </BrowserRouter>
-    </>
+      </BrowserRouter>
+    </AppContext>
   );
-}
+};
 
 export default App;

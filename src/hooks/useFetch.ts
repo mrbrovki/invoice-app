@@ -44,7 +44,7 @@ const useFetch = <T = unknown> (url?:string) => {
     }
     fetchData();
   }, [url]);
-  return state
+  return state;
 }
 
 
