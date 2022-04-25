@@ -8,11 +8,10 @@ import Home from '../pages/Home';
 import InvoicePage from '../pages/InvoicePage';
 //  components
 import Layout from './Layout';
-
-
+//  styles
+import '../styles/css/app.css';
 
 const App = () => {
-  const {data, error} = useFetch('https://my-json-server.typicode.com/mrbrovki/demo/invoices', 'GET');
   return (
     <AppContext>
       <Suspense fallback={<></>}>
