@@ -1,0 +1,34 @@
+.main_light,
+.main_dark {
+  min-height: 100vh;
+}
+
+@media (max-width: 10240px) {
+  .main_light,
+  .main_dark {
+    padding: 8rem 10rem 8rem 17rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .main_light,
+  .main_dark {
+    padding: 10rem 5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main_light,
+  .main_dark {
+    padding: 8rem 1.5rem;
+  }
+}
+
+.main_light {
+  background-color: #F8F8F8;
+}
+
+.main_dark {
+  background-color: #141625;
+}
+/*# sourceMappingURL=main.module.css.map */

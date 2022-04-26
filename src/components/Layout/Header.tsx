@@ -17,10 +17,14 @@ const Header = () => {
       dispatch({type: 'COLOR_MODE', payload: 'light'})
     }
   };
+  const reloadContent = () => {
+    dispatch({type: 'EDITOR', payload: 'hidden'});
+    dispatch({type: 'OVERLAY', payload: false});
+  };
   return (
     <header className={styles.header_container}>
       <div className={styles.logo}>
-        <Link to='/'>
+        <Link to='/' onClick={reloadContent}>
           <img src='/assets/logo-group.svg' alt='logo' className={styles.logo_image}/>
         </Link>
       </div>

@@ -1,0 +1,32 @@
+@media (max-width: 10240px) {
+  .header_container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0rem auto;
+    max-width: 80rem;
+    height: 10rem;
+    background-color: bisque;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .header_container .left_container .heading_light {
+    color: #000;
+  }
+  .header_container .left_container .heading_dark,
+  .header_container .left_container .total_invoices_dark {
+    color: #fff;
+  }
+  .header_container .left_container .total_invoices_light {
+    color: black;
+  }
+}
+/*# sourceMappingURL=invoice_header.module.css.map */

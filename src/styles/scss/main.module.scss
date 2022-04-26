@@ -1,0 +1,27 @@
+@import 'responsive';
+@import 'variables';
+
+.main_light,
+.main_dark{
+ min-height: 100vh;
+ 
+ @include desktop{
+  padding: 8rem 10rem 8rem 17rem;
+ }
+
+ @include tablet{
+  padding: 10rem 5rem;
+ }
+
+ @include mobile{
+  padding: 8rem 1.5rem;
+ }
+}
+
+.main_light{
+ background-color: $main-light-bg-clr;
+}
+
+.main_dark{
+ background-color: $main-dark-bg-clr;
+}

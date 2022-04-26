@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { FC } from 'react';
+import { ColorMode } from '../lib/Types';
 
 
 
-const Filter = () => {
+const Filter:FC<{colorMode: ColorMode}> = ({colorMode}) => {
   return (
     <div>Filter</div>
   );

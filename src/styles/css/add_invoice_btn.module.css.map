@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../scss/add_invoice_btn.module.scss"
+    ],
+    "names": [],
+    "file": "add_invoice_btn.module.css"
+}

@@ -6,12 +6,12 @@ import { State, Action, AppContextProps } from '../lib/Types';
 const initState:State = {
   filter: [],
   invoices: [],
-  colorMode: 'light'
+  colorMode: 'light',
+  editorVisibility: 'hidden',
+  isOverlay: false
 };
 
 export const Context = createContext<{state: State, dispatch:Dispatch<Action>}>({state: initState, dispatch: () => {}});
-
-
 
 const AppContext:FC<AppContextProps<ReactNode>> = ({children}) => {
   const reducer = <T extends State>(state: T, action: Action):T =>{
@@ -29,13 +29,16 @@ const AppContext:FC<AppContextProps<ReactNode>> = ({children}) => {
         return {...state, ivoices: payload};
       case 'COLOR_MODE':
         return {...state, colorMode: payload};
+      case 'EDITOR':
+        return {...state, editorVisibility: payload};
+      case 'OVERLAY':
+        console.log('trigger')
+        return {...state, isOverlay: payload};
       default:
         return{...state};
     }
   };
   const [state, dispatch] = useReducer(reducer, initState);
- 
-  
   return (
     <Context.Provider value={{state, dispatch}}>
      {children}

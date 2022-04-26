@@ -1,0 +1,45 @@
+@import 'variables';
+@import 'responsive';
+
+@include desktop{
+
+ .header_container{
+  display: flex;
+  margin: 0rem auto;
+  max-width: 80rem;
+  height: 10rem;
+  background-color: bisque;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  .left_container{
+
+   .heading_light,
+   .heading_dark{
+
+   }
+
+   .heading_light{
+    color: $clr-black;
+   }
+
+   .heading_dark,
+   .total_invoices_dark{
+    color: $clr-white;
+   }
+
+   .total_invoices_light,
+   .total_invoices_dark{
+    
+   }
+
+   .total_invoices_light{
+    color: black;
+   }
+
+   
+
+  }
+ }
+}

@@ -4,14 +4,17 @@ export interface AppContextProps<T>{
 type filterType = 'DRAFT'|'PENDING'|'PAID';
 export interface InvoiceProps{};
 
-type ColorMode = 'light' | 'dark';
+export type ColorMode = 'light' | 'dark';
 
 export interface State{
  filter: filterType[];
  invoices: InvoiceProps[];
  colorMode: ColorMode;
+ editorVisibility: EditorVisibility;
+ isOverlay: boolean;
 };
 
+type EditorVisibility = 'visible' | 'hidden';
 
 export type Action =
 | {type: 'FILTER', payload: filterType}
@@ -20,5 +23,7 @@ export type Action =
 | {type: 'ADD_INVOICE', payload: unknown}
 | {type: 'REMOVE_INVOICE', payload: unknown}
 | {type: 'INVOICE_PAID', payload: unknown}
+| {type: 'EDITOR', payload: EditorVisibility}
+| {type: 'OVERLAY', payload: boolean}
 
 export type FetchMethod = 'POST' | 'PUT' | 'GET';
