@@ -8,7 +8,8 @@ const initState:State = {
   invoices: [],
   colorMode: 'light',
   editorVisibility: 'hidden',
-  isOverlay: false
+  isOverlay: false,
+  filterOptionsVisibility: 'hidden'
 };
 
 export const Context = createContext<{state: State, dispatch:Dispatch<Action>}>({state: initState, dispatch: () => {}});
@@ -32,8 +33,9 @@ const AppContext:FC<AppContextProps<ReactNode>> = ({children}) => {
       case 'EDITOR':
         return {...state, editorVisibility: payload};
       case 'OVERLAY':
-        console.log('trigger')
         return {...state, isOverlay: payload};
+      case 'FILTER_OPTIONS':
+        return {...state, filterOptionsVisibility: payload}
       default:
         return{...state};
     }

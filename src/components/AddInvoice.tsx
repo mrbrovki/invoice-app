@@ -1,11 +1,12 @@
-import { useContext } from 'react';
+import { FC, useContext } from 'react';
 import { Context } from '../context';
+
 //  styles
 import styles from '../styles/css/add_invoice_btn.module.css';
 
 
 
-const AddInvoice = () => {
+const AddInvoice:FC = () => {
   const {dispatch} = useContext(Context);
   const openEditor = () => {
     dispatch({type: 'EDITOR', payload: 'visible'});

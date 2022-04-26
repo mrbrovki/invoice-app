@@ -1,0 +1,40 @@
+@media (max-width: 10240px) {
+  .filter_container_light,
+  .filter_container_dark {
+    width: 8rem;
+    height: 1.5rem;
+    position: relative;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+  }
+  .filter_container_light:hover,
+  .filter_container_dark:hover {
+    cursor: pointer;
+  }
+  .filter_container_light .arrow_icon_container::before,
+  .filter_container_dark .arrow_icon_container::before {
+    content: 'Filter by status';
+    margin-right: 1rem;
+  }
+  .filter_container_light .arrow_icon_container::before {
+    color: #000;
+  }
+  .filter_container_dark .arrow_icon_container::before {
+    color: #fff;
+  }
+}
+
+@media (max-width: 768px) {
+  .filter_container_light,
+  .filter_container_dark {
+    width: 4rem;
+  }
+  .filter_container_light .arrow_icon_container::before,
+  .filter_container_dark .arrow_icon_container::before {
+    content: "Filter";
+    width: 4rem;
+  }
+}
+/*# sourceMappingURL=filter.module.css.map */

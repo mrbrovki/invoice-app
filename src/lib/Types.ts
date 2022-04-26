@@ -10,11 +10,12 @@ export interface State{
  filter: filterType[];
  invoices: InvoiceProps[];
  colorMode: ColorMode;
- editorVisibility: EditorVisibility;
+ editorVisibility: Visibility;
  isOverlay: boolean;
+ filterOptionsVisibility: Visibility;
 };
 
-type EditorVisibility = 'visible' | 'hidden';
+type Visibility = 'visible' | 'hidden';
 
 export type Action =
 | {type: 'FILTER', payload: filterType}
@@ -23,7 +24,8 @@ export type Action =
 | {type: 'ADD_INVOICE', payload: unknown}
 | {type: 'REMOVE_INVOICE', payload: unknown}
 | {type: 'INVOICE_PAID', payload: unknown}
-| {type: 'EDITOR', payload: EditorVisibility}
+| {type: 'EDITOR', payload: Visibility}
 | {type: 'OVERLAY', payload: boolean}
+| {type: 'FILTER_OPTIONS', payload: Visibility}
 
 export type FetchMethod = 'POST' | 'PUT' | 'GET';

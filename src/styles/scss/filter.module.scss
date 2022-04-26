@@ -1,0 +1,62 @@
+@import 'responsive';
+@import 'variables';
+
+@include desktop{
+
+ .filter_container_light,
+ .filter_container_dark{
+  width: 8rem;
+  height: 1.5rem;
+  position: relative;
+  user-select: none;
+  
+  &:hover{
+   cursor: pointer;
+  }
+
+  .arrow_icon_container{
+
+   &::before{
+    content: 'Filter by status';
+    margin-right: 1rem;
+   }
+  }
+ }
+
+ .filter_container_light{
+  
+  .arrow_icon_container{
+
+   &::before{
+    color: $clr-black;
+   }
+  }
+ }
+
+ .filter_container_dark {
+ 
+  .arrow_icon_container {
+ 
+   &::before {
+    color: $clr-white;
+   }
+  }
+ }
+}
+
+
+@include mobile {
+
+ .filter_container_light,
+ .filter_container_dark {
+  width: 4rem;
+  
+  .arrow_icon_container{
+
+   &::before{
+    content: "Filter";
+    width: 4rem;
+   }
+  }
+ }
+}

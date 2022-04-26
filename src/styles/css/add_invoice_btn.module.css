@@ -40,7 +40,7 @@
     width: 8rem;
   }
   .btn_container .plus_icon_container::after {
-    left: 1rem;
+    width: 6rem;
   }
 }
 
@@ -50,7 +50,7 @@
   }
   .btn_container .plus_icon_container::after {
     content: "New";
-    left: 0rem;
+    width: 4rem;
   }
 }
 /*# sourceMappingURL=add_invoice_btn.module.css.map */

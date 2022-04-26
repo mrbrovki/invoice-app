@@ -11,7 +11,10 @@ const Header = () => {
   <div className={styles.header_container}>
    <div className={styles.left_container}>
     <h1 className={styles[`heading_${colorMode}`]}>Invoices</h1>
-    <p className={styles[`total_invoices_${colorMode}`]}>There are {8} total invoices</p>
+    <p className={styles[`total_invoices_${colorMode}`]}>
+     <span className={styles.amount}>{0}</span>
+     <span>invoices</span>
+    </p>
    </div>
    <div className={styles.right_container}>
     <Filter colorMode={colorMode}/>

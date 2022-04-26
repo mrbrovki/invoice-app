@@ -44,7 +44,7 @@
   .plus_icon_container{
    
    &::after{
-    left: 1rem;
+    width: 6rem;
    }
   }
  }
@@ -59,7 +59,7 @@
   
    &::after {
     content: "New";
-    left: 0rem;
+    width: 4rem;
    }
   }
  }

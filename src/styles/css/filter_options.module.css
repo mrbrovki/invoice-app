@@ -1,0 +1,116 @@
+@media (max-width: 10240px) {
+  .options_container_light,
+  .options_container_dark {
+    position: absolute;
+    border: none;
+    border-radius: 0.2rem;
+    -webkit-box-shadow: 0 0 0.5rem #0000000e;
+            box-shadow: 0 0 0.5rem #0000000e;
+    width: 12rem;
+    top: 3rem;
+    left: -3rem;
+    padding: 0;
+    overflow: hidden;
+    -webkit-transition: max-height 0.3s;
+    transition: max-height 0.3s;
+  }
+  .options_container_light .option,
+  .options_container_dark .option {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    line-height: 3rem;
+  }
+  .options_container_light .option .checkmark,
+  .options_container_dark .option .checkmark {
+    left: 1rem;
+    top: 1rem;
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    z-index: 3;
+    cursor: pointer;
+    background-color: #7C5EFA;
+  }
+  .options_container_light .option .checkmark::after,
+  .options_container_dark .option .checkmark::after {
+    position: absolute;
+    content: '';
+    width: 0.25rem;
+    left: 0.3rem;
+    height: 0.5rem;
+    border: solid #fff;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  .options_container_light .option input,
+  .options_container_dark .option input {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    left: 1rem;
+    top: 1rem;
+    margin: 0;
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    z-index: 4;
+    visibility: visible;
+    cursor: pointer;
+  }
+  .options_container_light .option input:checked,
+  .options_container_dark .option input:checked {
+    visibility: hidden;
+  }
+  .options_container_light .option .status_type_dark,
+  .options_container_light .option .status_type_light,
+  .options_container_dark .option .status_type_dark,
+  .options_container_dark .option .status_type_light {
+    margin-left: 3rem;
+    text-transform: capitalize;
+    font-weight: 600;
+  }
+  .options_container_light .option .status_type_light,
+  .options_container_dark .option .status_type_light {
+    color: #000;
+  }
+  .options_container_light .option .status_type_dark,
+  .options_container_dark .option .status_type_dark {
+    color: #fff;
+  }
+  .options_container_light {
+    background-color: #fff;
+  }
+  .options_container_dark {
+    background-color: #1E2139;
+  }
+}
+
+@media (max-width: 1024px) {
+  .options_container_dark,
+  .options_container_light {
+    left: -2rem;
+  }
+}
+
+.visible {
+  max-height: 12rem;
+}
+
+.hidden {
+  max-height: 0rem;
+}
+
+.checkbox_light {
+  background-color: #c6c7d8;
+}
+
+.checkbox_dark {
+  background-color: #130d2a;
+}
+/*# sourceMappingURL=filter_options.module.css.map */
