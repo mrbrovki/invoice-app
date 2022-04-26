@@ -1,1 +1,56 @@
-/* No CSS *//*# sourceMappingURL=add_invoice_btn.module.css.map */
+@media (max-width: 10240px) {
+  .btn_container {
+    width: 10rem;
+    height: 3rem;
+    color: #fff;
+    border: none;
+    background-color: #7C5EFA;
+    border-radius: 1.5rem;
+    position: relative;
+  }
+  .btn_container:hover {
+    cursor: pointer;
+  }
+  .btn_container .plus_icon_container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    background-color: #fff;
+    border-radius: 50%;
+  }
+  .btn_container .plus_icon_container::after {
+    content: 'New Invoice';
+    display: inline-block;
+    position: absolute;
+    width: 8rem;
+    left: 2rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .btn_container {
+    width: 8rem;
+  }
+  .btn_container .plus_icon_container::after {
+    left: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .btn_container {
+    width: 6rem;
+  }
+  .btn_container .plus_icon_container::after {
+    content: "New";
+    left: 0rem;
+  }
+}
+/*# sourceMappingURL=add_invoice_btn.module.css.map */

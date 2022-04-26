@@ -13,10 +13,9 @@ const AddInvoice = () => {
   };
   return (
     <button className={styles.btn_container} onClick={openEditor}>
-      <img className={styles.plus_icon} src='/assets/icon-plus.svg' alt='plus icon'/>
-      <span className={styles.new_invoice_text}>
-        New Invoice
-      </span>
+      <div className={styles.plus_icon_container}>
+        <img src='/assets/icon-plus.svg' alt='plus icon'/>
+      </div>
     </button>
   );
 };

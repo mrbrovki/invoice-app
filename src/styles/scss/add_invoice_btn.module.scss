@@ -1,0 +1,66 @@
+@import 'variables';
+@import 'responsive';
+
+@include desktop{
+
+ .btn_container {
+  width: 10rem;
+  height: 3rem;
+  color: $clr-white;
+  border: none;
+  background-color: $clr-violet;
+  border-radius: 1.5rem;
+  position: relative;
+
+  &:hover{
+   cursor: pointer;
+  }
+  
+  .plus_icon_container {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 2rem;
+   height: 2rem;
+   background-color: $clr-white;
+   border-radius: 50%;
+
+   &::after{
+    content: 'New Invoice';
+    display: inline-block;
+    position: absolute;
+    width: 8rem;
+    left: 2rem
+   }
+  }
+ }
+}
+
+@include tablet{
+
+ .btn_container{
+  width: 8rem;
+
+  .plus_icon_container{
+   
+   &::after{
+    left: 1rem;
+   }
+  }
+ }
+}
+
+@include mobile{
+
+ .btn_container{
+  width: 6rem;
+
+  .plus_icon_container {
+  
+   &::after {
+    content: "New";
+    left: 0rem;
+   }
+  }
+ }
+}
