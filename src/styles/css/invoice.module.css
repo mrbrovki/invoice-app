@@ -64,8 +64,8 @@
   border: 1px solid #0000;
   text-decoration: none;
   padding: 0 2rem;
-  -webkit-transition: border-color 0.3s;
-  transition: border-color 0.3s;
+  -webkit-transition: border-color, height 0.3s;
+  transition: border-color, height 0.3s;
 }
 
 .invoice_container_light:hover,
@@ -79,6 +79,7 @@
 .invoice_container_dark .id_light,
 .invoice_container_dark .id_dark {
   font-weight: 700;
+  margin: 0;
 }
 
 .invoice_container_light .id_light::before,
@@ -99,6 +100,7 @@
 .invoice_container_dark .name_light,
 .invoice_container_dark .name_dark {
   font-weight: 100;
+  margin: 0;
 }
 
 .invoice_container_light .total_dark,
@@ -107,6 +109,7 @@
 .invoice_container_dark .total_light {
   font-weight: 600;
   font-size: 1.2rem;
+  margin: 0;
 }
 
 .invoice_container_light .status_container_paid,
@@ -170,5 +173,66 @@
 .invoice_container_dark .arrow {
   -webkit-transform: scale(1.25);
           transform: scale(1.25);
+}
+
+@media (max-width: 768px) {
+  .invoice_container_dark,
+  .invoice_container_light {
+    height: 8rem;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -ms-grid-columns: 1fr 10rem;
+        grid-template-columns: 1fr 10rem;
+    grid-auto-rows: 2.5rem 1rem 3rem;
+  }
+  .id-light,
+  .id_dark {
+    height: 2.5rem;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  .due_light,
+  .due_dark {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-area: 2 / 1 / 3 / 2;
+  }
+  .name_light,
+  .name_dark {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-area: 1 / 2 / 2/ 3;
+    -ms-grid-column-align: right;
+        justify-self: right;
+  }
+  .status_container_paid,
+  .status_container_pending,
+  .status_container_draft {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-area: 2 / 2 / 4 / 3;
+    -ms-grid-column-align: right;
+        justify-self: right;
+  }
+  .total_light,
+  .total_dark {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-area: 3 / 1 / 4 / 2;
+  }
+  .arrow {
+    display: none;
+  }
 }
 /*# sourceMappingURL=invoice.module.css.map */

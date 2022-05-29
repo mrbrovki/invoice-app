@@ -1,1 +1,5 @@
-/* No CSS *//*# sourceMappingURL=invoices.module.css.map */
+.invoices_container {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+/*# sourceMappingURL=invoices.module.css.map */
