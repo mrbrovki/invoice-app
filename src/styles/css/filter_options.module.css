@@ -1,4 +1,4 @@
-@media (max-width: 10240px) {
+@media (max-width: 3000px) {
   .options_container_light,
   .options_container_dark {
     position: absolute;
@@ -6,6 +6,7 @@
     border-radius: 0.2rem;
     -webkit-box-shadow: 0 0 0.5rem #0000000e;
             box-shadow: 0 0 0.5rem #0000000e;
+    z-index: 2;
     width: 12rem;
     top: 3rem;
     left: -3rem;
@@ -91,7 +92,7 @@
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .options_container_dark,
   .options_container_light {
     left: -2rem;

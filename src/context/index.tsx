@@ -4,7 +4,7 @@ import {createContext, Dispatch, FC, ReactNode, useReducer, Suspense} from 'reac
 import { State, Action, AppContextProps } from '../lib/Types';
 
 const initState:State = {
-  filter: [],
+  filter: {draft: false, pending: false, paid: false},
   invoices: [],
   colorMode: 'light',
   editorVisibility: 'hidden',
@@ -19,7 +19,7 @@ const AppContext:FC<AppContextProps<ReactNode>> = ({children}) => {
     const {type, payload} = action;
     switch(type){
       case 'FILTER':
-        return {...state, filter: [...state.filter, payload]};
+        return {...state, filter: payload};
       case 'ADD_INVOICE':
         return state;
       case 'REMOVE_INVOICE':
@@ -27,7 +27,7 @@ const AppContext:FC<AppContextProps<ReactNode>> = ({children}) => {
       case 'INVOICE_PAID':
         return state;
       case 'SET_INVOICES':
-        return {...state, ivoices: payload};
+        return {...state, invoices: payload};
       case 'COLOR_MODE':
         return {...state, colorMode: payload};
       case 'EDITOR':

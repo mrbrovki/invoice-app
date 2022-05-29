@@ -1,13 +1,9 @@
-@media (max-width: 10240px) {
+@media (max-width: 3000px) {
   .filter_container_light,
   .filter_container_dark {
     width: 8rem;
     height: 1.5rem;
     position: relative;
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
   }
   .filter_container_light:hover,
   .filter_container_dark:hover {
@@ -26,7 +22,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .filter_container_light,
   .filter_container_dark {
     width: 4rem;

@@ -1,4 +1,4 @@
-import { FC, useContext } from "react";
+import { FC, useContext, useRef } from "react";
 import { Context } from "../context";
 import { ColorMode } from "../lib/Types";
 
@@ -9,6 +9,9 @@ import styles from '../styles/css/filter_options.module.css';
 
 const FilterOptions:FC<{colorMode: ColorMode}> = ({colorMode}) => {
  const {state:{filterOptionsVisibility}, dispatch} = useContext(Context);
+ const changeFilter = (option: string) =>{
+
+ }
 
   return (
     <form>
@@ -16,7 +19,7 @@ const FilterOptions:FC<{colorMode: ColorMode}> = ({colorMode}) => {
       <label htmlFor="draft" className={styles.option}>
        <input type={'checkbox'} id='draft' className={styles[`checkbox_${colorMode}`]}/>
        <span className={styles.checkmark}></span>
-       <span className={styles[`status_type_${colorMode}`]}>draft</span>
+       <span className={styles[`status_type_${colorMode}`]}>draft</span> 
       </label>
       <label htmlFor="pending" className={styles.option}>
        <input type={'checkbox'} id='pending' className={styles[`checkbox_${colorMode}`]}/>

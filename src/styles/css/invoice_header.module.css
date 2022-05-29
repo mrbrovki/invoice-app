@@ -1,4 +1,4 @@
-@media (max-width: 10240px) {
+@media (max-width: 3000px) {
   .header_container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -76,7 +76,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .header_container .left_container .heading_dark,
   .header_container .left_container .heading_light {
     font-size: 1.5rem;

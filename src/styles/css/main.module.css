@@ -5,7 +5,7 @@
   transition: background-color 0.3s;
 }
 
-@media (max-width: 10240px) {
+@media (max-width: 3000px) {
   .main_light,
   .main_dark {
     padding: 8rem 10rem 8rem 17rem;
@@ -19,7 +19,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .main_light,
   .main_dark {
     padding: 8rem 1.5rem;

@@ -1,19 +1,21 @@
-@import 'responsive';
+@import 'breakpoints';
 @import 'variables';
 
 .main_light,
 .main_dark{
  min-height: 100vh;
  transition: background-color 0.3s;
- @include desktop{
+
+
+ @include max-xl{
   padding: 8rem 10rem 8rem 17rem;
  }
 
- @include tablet{
+ @include max-lg{
   padding: 10rem 5rem;
  }
 
- @include mobile{
+ @include max-tablet{
   padding: 8rem 1.5rem;
  }
 }

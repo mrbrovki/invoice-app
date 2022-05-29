@@ -1,14 +1,13 @@
-@import 'responsive';
+@import 'breakpoints';
 @import 'variables';
 
-@include desktop{
+@include max-xl{
 
  .filter_container_light,
  .filter_container_dark{
   width: 8rem;
   height: 1.5rem;
   position: relative;
-  user-select: none;
   
   &:hover{
    cursor: pointer;
@@ -45,7 +44,7 @@
 }
 
 
-@include mobile {
+@include max-tablet {
 
  .filter_container_light,
  .filter_container_dark {

@@ -1,4 +1,4 @@
-@media (max-width: 10240px) {
+@media (max-width: 3000px) {
   .btn_container {
     width: 10rem;
     height: 3rem;
@@ -44,7 +44,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .btn_container {
     width: 6rem;
   }

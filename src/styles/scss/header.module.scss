@@ -1,7 +1,7 @@
-@import 'responsive';
+@import 'breakpoints';
 @import 'variables';
 
-@include desktop{
+@include max-xl{
 
   .header_container{
     position: fixed;
@@ -69,7 +69,7 @@
   }
 }
 
-@include tablet{
+@include max-lg{
 
  .header_container{
     flex-flow: row nowrap;
@@ -116,7 +116,7 @@
   }
 }
 
-@include mobile{
+@include max-tablet{
 
  .header_container{
   height: 5rem;

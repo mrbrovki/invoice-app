@@ -1,7 +1,7 @@
 @import 'variables';
-@import 'responsive';
+@import 'breakpoints';
 
-@include desktop{
+@include max-xl{
 
  .header_container{
   display: flex;
@@ -61,7 +61,7 @@
  }
 }
 
-@include tablet{
+@include max-lg{
 
  .header_container{
 
@@ -78,7 +78,7 @@
  }
 }
 
-@include mobile {
+@include max-tablet {
 
  .header_container {
 

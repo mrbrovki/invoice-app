@@ -1,0 +1,174 @@
+.invoice_container_light {
+  background-color: #fff;
+}
+
+.invoice_container_light .id_light {
+  color: #000;
+}
+
+.invoice_container_light .due_light,
+.invoice_container_light .name_light {
+  color: #AFB5DA;
+}
+
+.invoice_container_light .status_container_draft {
+  color: #000;
+  background-color: #00000009;
+}
+
+.invoice_container_light .status_container_draft .circle {
+  background-color: #000;
+}
+
+.invoice_container_light .total_light {
+  color: #000;
+}
+
+.invoice_container_dark {
+  background-color: #1E2139;
+}
+
+.invoice_container_dark .id_dark {
+  color: #fff;
+}
+
+.invoice_container_dark .due_dark,
+.invoice_container_dark .name_dark,
+.invoice_container_dark .total_dark {
+  color: #fff;
+}
+
+.invoice_container_dark .status_container_draft {
+  color: #fff;
+  background-color: #ffffff0f;
+}
+
+.invoice_container_dark .status_container_draft .circle {
+  background-color: #fff;
+}
+
+.invoice_container_light,
+.invoice_container_dark {
+  height: 5rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4] 8rem 0.5rem;
+      grid-template-columns: repeat(4, 1fr) 8rem 0.5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 1rem;
+  -webkit-box-shadow: 0 0 8px #0000001d;
+          box-shadow: 0 0 8px #0000001d;
+  border-radius: 10px;
+  border: 1px solid #0000;
+  text-decoration: none;
+  padding: 0 2rem;
+  -webkit-transition: border-color 0.3s;
+  transition: border-color 0.3s;
+}
+
+.invoice_container_light:hover,
+.invoice_container_dark:hover {
+  cursor: pointer;
+  border-color: #9277FF;
+}
+
+.invoice_container_light .id_light,
+.invoice_container_light .id_dark,
+.invoice_container_dark .id_light,
+.invoice_container_dark .id_dark {
+  font-weight: 700;
+}
+
+.invoice_container_light .id_light::before,
+.invoice_container_light .id_dark::before,
+.invoice_container_dark .id_light::before,
+.invoice_container_dark .id_dark::before {
+  content: '#';
+  font-weight: 400;
+  color: #AFB5DA;
+}
+
+.invoice_container_light .due_dark,
+.invoice_container_light .due_light,
+.invoice_container_light .name_light,
+.invoice_container_light .name_dark,
+.invoice_container_dark .due_dark,
+.invoice_container_dark .due_light,
+.invoice_container_dark .name_light,
+.invoice_container_dark .name_dark {
+  font-weight: 100;
+}
+
+.invoice_container_light .total_dark,
+.invoice_container_light .total_light,
+.invoice_container_dark .total_dark,
+.invoice_container_dark .total_light {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.invoice_container_light .status_container_paid,
+.invoice_container_light .status_container_pending,
+.invoice_container_light .status_container_draft,
+.invoice_container_dark .status_container_paid,
+.invoice_container_dark .status_container_pending,
+.invoice_container_dark .status_container_draft {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 7rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.invoice_container_light .status_container_paid .circle,
+.invoice_container_light .status_container_pending .circle,
+.invoice_container_light .status_container_draft .circle,
+.invoice_container_dark .status_container_paid .circle,
+.invoice_container_dark .status_container_pending .circle,
+.invoice_container_dark .status_container_draft .circle {
+  margin: 0.2rem;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+}
+
+.invoice_container_light .status_container_paid,
+.invoice_container_dark .status_container_paid {
+  background-color: #3fd7a225;
+  color: #3fd7a1;
+}
+
+.invoice_container_light .status_container_paid .circle,
+.invoice_container_dark .status_container_paid .circle {
+  background-color: #3fd7a1;
+}
+
+.invoice_container_light .status_container_pending,
+.invoice_container_dark .status_container_pending {
+  background-color: #f7890220;
+  color: #f78a02;
+}
+
+.invoice_container_light .status_container_pending .circle,
+.invoice_container_dark .status_container_pending .circle {
+  background-color: #f78a02;
+}
+
+.invoice_container_light .arrow,
+.invoice_container_dark .arrow {
+  -webkit-transform: scale(1.25);
+          transform: scale(1.25);
+}
+/*# sourceMappingURL=invoice.module.css.map */

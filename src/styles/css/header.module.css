@@ -1,4 +1,4 @@
-@media (max-width: 10240px) {
+@media (max-width: 3000px) {
   .header_container {
     position: fixed;
     z-index: 10;
@@ -132,7 +132,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .header_container {
     height: 5rem;
   }

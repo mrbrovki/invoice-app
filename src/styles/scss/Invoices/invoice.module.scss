@@ -1,0 +1,140 @@
+@import '../variables';
+@import '../breakpoints';
+
+.invoice_container_light{
+ background-color: $clr-white;
+
+ .id_light{
+  color: $clr-black;
+ }
+
+ .due_light,
+ .name_light {
+  color: $clr-greyish-blue;
+ }
+
+ .status_container_draft {
+  color: $clr-black;
+  background-color: #00000009;
+
+  .circle {
+   background-color: $clr-black;
+  }
+ }
+
+ .total_light{
+  color: $clr-black;
+ }
+}
+
+.invoice_container_dark{
+ background-color: $invoice-dark-bg;
+
+ .id_dark {
+  color: $clr-white;
+ }
+
+ .due_dark,
+ .name_dark,
+ .total_dark {
+  color: $clr-white;
+ }
+
+ .status_container_draft {
+  color: $clr-white;
+  background-color: #ffffff0f;
+
+  .circle {
+   background-color: $clr-white;
+  }
+ }
+}
+
+.invoice_container_light,
+.invoice_container_dark{
+ height: 5rem;
+ display: grid;
+ grid-template-columns: repeat(4, 1fr) 8rem 0.5rem;
+ align-items: center;
+ margin-top: 1rem;
+ box-shadow: 0 0 8px #0000001d;
+ border-radius: 10px;
+ border: 1px solid #0000;
+ text-decoration: none;
+ padding: 0 2rem;
+ transition: border-color 0.3s;
+
+ &:hover{
+  cursor: pointer;
+  border-color: #9277FF;
+ }
+
+ .id_light,
+ .id_dark{
+  font-weight: 700;
+
+  &::before{
+   content: '#';
+   font-weight: 400;
+   color: $clr-greyish-blue;
+  }
+ }
+
+  .due_dark,
+  .due_light,
+  .name_light,
+  .name_dark{
+   font-weight: 100;
+  }
+
+ .total_dark,
+ .total_light{
+  font-weight: 600;
+  font-size: 1.2rem;
+ }
+
+ .status_container_paid,
+ .status_container_pending,
+ .status_container_draft{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 7rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: capitalize;
+
+  .circle {
+   margin: 0.2rem;
+   width: 0.6rem;
+   height: 0.6rem;
+   border-radius: 50%;
+  }
+ }
+
+ .status_container_paid{
+  background-color: $paid-bg-clr;
+  color: $paid-clr;
+
+  .circle{
+   background-color: $paid-clr;
+  }
+ }
+
+ .status_container_pending{
+  background-color: $pending-bg-clr;
+  color: $pending-clr;
+
+  .circle{
+   background-color: $pending-clr;
+  }
+ }
+
+ .arrow{
+  transform: scale(1.25);
+ }
+}
+
+

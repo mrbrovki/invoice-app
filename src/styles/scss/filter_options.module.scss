@@ -1,7 +1,7 @@
 @import 'variables';
-@import 'responsive';
+@import 'breakpoints';
 
-@include desktop{
+@include max-xl{
  
  .options_container_light,
  .options_container_dark{
@@ -9,6 +9,7 @@
   border: none;
   border-radius: 0.2rem;
   box-shadow: 0 0 0.5rem #0000000e;
+  z-index: 2;
   width: 12rem;
   top: 3rem;
   left: -3rem;
@@ -88,7 +89,7 @@
  }
 }
 
-@include tablet{
+@include max-md{
  .options_container_dark,
  .options_container_light{
   left: -2rem;

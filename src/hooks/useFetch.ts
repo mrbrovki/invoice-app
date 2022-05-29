@@ -1,7 +1,6 @@
 import { useEffect, useReducer} from "react";
 import { FetchMethod } from "../lib/Types";
 
-
 interface State<T>{
  data?: T;
  error?: Error;
@@ -43,34 +42,7 @@ const useFetch = <T = unknown> (url:string, method: FetchMethod, invoice?: objec
        dispatch({type: 'ERROR', payload: err as Error});
       }
       break;
-     case 'POST':
-      try{
-       const postResponse = await fetch(url, {
-        method,
-        headers: {'Content-Type': 'application/json; charset=utf-8'},
-        body: JSON.stringify(invoice)
-       });
-       dispatch({type: 'FETCHED'});
-      }
-      catch(err){
-       dispatch({type: 'ERROR', payload: err as Error});
-      }
-      break;
-     case 'PUT':
-      try{
-       const putResponse = await fetch(url, {
-        method,
-        headers: {'Content-Type': 'application/json; charset=utf-8'},
-        body: JSON.stringify(invoice)
-       });
-       dispatch({type: 'FETCHED'});
-      }
-      catch(err){
-       dispatch({type: 'ERROR', payload: new Error('put failed!')});
-      }
-      break;
      default:
-      console.log('huh?');
       break;
     }
    };
