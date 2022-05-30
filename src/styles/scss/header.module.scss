@@ -40,7 +40,6 @@
 
         img{
           &:hover{
-            filter: brightness(2) drop-shadow(0 0 1rem $clr_white);
             cursor: pointer;
           }
         }

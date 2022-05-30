@@ -52,8 +52,6 @@
             justify-content: center;
   }
   .header_container .avatar_colorMode_container .colorModeBtn img:hover {
-    -webkit-filter: brightness(2) drop-shadow(0 0 1rem #fff);
-            filter: brightness(2) drop-shadow(0 0 1rem #fff);
     cursor: pointer;
   }
   .header_container .avatar_colorMode_container .avatar_container {
