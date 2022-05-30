@@ -17,6 +17,10 @@ p {
     border: none;
     text-transform: capitalize;
     font-weight: 600;
+
+    &:hover{
+      cursor: pointer;
+    }
    }
   }
  
@@ -336,6 +340,34 @@ p {
 
   .total_container{
     grid-area: 6 / 1 / 7 / 3;
+  }
+
+  table{
+
+    thead{
+
+      th:nth-child(2),
+      th:nth-child(3){
+        display: none;
+      }
+    }
+
+    tbody{
+      
+      tr{
+        td{
+          font-weight: 100 !important;
+        }
+        td:nth-child(2),
+        td:nth-child(3){
+          display: none;
+        }
+      }
+    }
+  }
+
+  .total{
+    font-size: 1.2rem !important;
   }
 
 }

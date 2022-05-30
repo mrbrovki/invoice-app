@@ -15,6 +15,11 @@ p {
   font-weight: 600;
 }
 
+.page_container .btn_container_light button:hover,
+.page_container .btn_container_dark button:hover {
+  cursor: pointer;
+}
+
 .page_container .btn_container_light button {
   color: #000;
 }
@@ -328,6 +333,20 @@ p {
     -ms-grid-column: 1;
     -ms-grid-column-span: 2;
     grid-area: 6 / 1 / 7 / 3;
+  }
+  table thead th:nth-child(2),
+  table thead th:nth-child(3) {
+    display: none;
+  }
+  table tbody tr td {
+    font-weight: 100 !important;
+  }
+  table tbody tr td:nth-child(2),
+  table tbody tr td:nth-child(3) {
+    display: none;
+  }
+  .total {
+    font-size: 1.2rem !important;
   }
 }
 /*# sourceMappingURL=invoice_page.module.css.map */
