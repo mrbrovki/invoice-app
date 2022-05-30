@@ -55,14 +55,12 @@ p {
   .invoice_container_dark{
    display: grid;
    grid-template-columns: repeat(4, 1fr);
-   grid-auto-rows: repeat(3, 5rem) 20rem;
    grid-gap: 1rem;
    margin-top: 1rem;
    border-radius: 10px;
    padding: 2rem;
 
-    .sender_adress{
-     justify-self: right;
+    .sender_address{    
      
      div{
        text-align: right;
@@ -104,12 +102,12 @@ p {
 .total_container{
   grid-area: 4 / 1 / 5 / 5;
   border-radius: 20px;
-  min-height: 13rem;
   
  table{
   width: 100%;
   min-height: 6rem;
   padding: 2rem;
+  
   thead{
    
     th:nth-child(1){
@@ -150,7 +148,7 @@ p {
    display: flex;
    align-items: center;
    justify-content: space-between;
-   overflow: hidden;
+   border-radius: 0 0 20px 20px;
 
    .total{
      font-size: 2rem;
@@ -192,9 +190,35 @@ p {
         background-color: $invoice-dark-bg;
     }
   }
+
+  table{
+
+    thead{
+
+      th{
+        color: #b3b3b3;
+      }
+    }
+    
+    tbody{
+
+      tr{
+        
+        td{
+          color:#b3b3b3;
+        }
+
+        td:nth-child(1){
+          color: $clr-black;
+          font-weight: 700;
+        }
+      }
+    }
+  }
 }
 
 .invoice_container_dark{
+
   p,
   span {
     color: $clr-white;
@@ -215,6 +239,7 @@ p {
     }
   }
   div {
+
     p:first-child {
       color: #e4e4e4ba;
     }
@@ -225,6 +250,30 @@ p {
 
     .amount_due_container{
       background-color: $clr-black;
+    }
+  }
+  table {
+
+    thead {
+
+      th {
+        color: #e4e4e4ba;
+      }
+    }
+
+    tbody {
+
+      tr {
+
+        td {
+          color: #e4e4e4ba;
+        }
+
+        td:nth-child(1) {
+          color: $clr-white;
+          font-weight: 700;
+        }
+      }
     }
   }
 }
@@ -244,6 +293,49 @@ p {
     }
   }
 }
+
 .big{
   font-size: 1.2rem;
+}
+
+@include max-md{
+
+  .invoice_container_light,
+  .invoice_container_dark{
+    grid-template-columns: 1fr 1fr !important;
+  }
+  
+  .id{
+    grid-area: 1 / 1 / 2 / 2;
+  }
+
+  .sender_address{
+    grid-area: 2 / 1 / 3 / 2;
+    
+    div{
+      text-align: left !important;
+    }
+  }
+
+  .bill_to_container{
+    grid-area: 1 / 2 / 6 / 3;
+    align-self: center;
+  }
+
+  .create_date_container{
+    grid-area: 3 / 1 / 4 / 2;
+  }
+
+  .due_date_container{
+    grid-area: 4 / 1 / 5 / 2;
+  }
+
+  .sent_to{
+    grid-area: 5 / 1 / 6 / 2;
+  }
+
+  .total_container{
+    grid-area: 6 / 1 / 7 / 3;
+  }
+
 }

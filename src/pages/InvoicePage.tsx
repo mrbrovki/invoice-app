@@ -36,7 +36,7 @@ const InvoicePage = () => {
           <span className={styles.big}>{invoice?.id}</span>
           <p>{invoice?.description}</p>
         </div>
-        <address className={styles.sender_adress}>
+        <address className={styles.sender_address}>
           <div>{invoice?.senderAddress.street}</div>
           <div>{invoice?.senderAddress.city}</div>
           <div>{invoice?.senderAddress.postCode}</div>

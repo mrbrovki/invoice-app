@@ -46,21 +46,14 @@ p {
   display: grid;
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: repeat(3, 5rem) 20rem;
   grid-gap: 1rem;
   margin-top: 1rem;
   border-radius: 10px;
   padding: 2rem;
 }
 
-.page_container .invoice_container_light .sender_adress,
-.page_container .invoice_container_dark .sender_adress {
-  -ms-grid-column-align: right;
-      justify-self: right;
-}
-
-.page_container .invoice_container_light .sender_adress div,
-.page_container .invoice_container_dark .sender_adress div {
+.page_container .invoice_container_light .sender_address div,
+.page_container .invoice_container_dark .sender_address div {
   text-align: right;
 }
 
@@ -120,7 +113,6 @@ p {
   -ms-grid-column-span: 4;
   grid-area: 4 / 1 / 5 / 5;
   border-radius: 20px;
-  min-height: 13rem;
 }
 
 .total_container table {
@@ -167,7 +159,7 @@ p {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  overflow: hidden;
+  border-radius: 0 0 20px 20px;
 }
 
 .total_container .amount_due_container .total {
@@ -204,6 +196,19 @@ p {
   background-color: #1E2139;
 }
 
+.invoice_container_light table thead th {
+  color: #b3b3b3;
+}
+
+.invoice_container_light table tbody tr td {
+  color: #b3b3b3;
+}
+
+.invoice_container_light table tbody tr td:nth-child(1) {
+  color: #000;
+  font-weight: 700;
+}
+
 .invoice_container_dark p,
 .invoice_container_dark span {
   color: #fff;
@@ -233,6 +238,19 @@ p {
   background-color: #000;
 }
 
+.invoice_container_dark table thead th {
+  color: #e4e4e4ba;
+}
+
+.invoice_container_dark table tbody tr td {
+  color: #e4e4e4ba;
+}
+
+.invoice_container_dark table tbody tr td:nth-child(1) {
+  color: #fff;
+  font-weight: 700;
+}
+
 .invoice_container_light address,
 .invoice_container_dark address {
   font-size: 0.9rem;
@@ -248,5 +266,68 @@ p {
 
 .big {
   font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .invoice_container_light,
+  .invoice_container_dark {
+    -ms-grid-columns: 1fr 1fr !important;
+        grid-template-columns: 1fr 1fr !important;
+  }
+  .id {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  .sender_address {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-area: 2 / 1 / 3 / 2;
+  }
+  .sender_address div {
+    text-align: left !important;
+  }
+  .bill_to_container {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 5;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-area: 1 / 2 / 6 / 3;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .create_date_container {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-area: 3 / 1 / 4 / 2;
+  }
+  .due_date_container {
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-area: 4 / 1 / 5 / 2;
+  }
+  .sent_to {
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-area: 5 / 1 / 6 / 2;
+  }
+  .total_container {
+    -ms-grid-row: 6;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: 6 / 1 / 7 / 3;
+  }
 }
 /*# sourceMappingURL=invoice_page.module.css.map */
