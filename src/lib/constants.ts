@@ -1,6 +1,7 @@
 export const monthArr = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 export const addComma = (num: string) =>{
+   if(!num) return;
    const numArr = num.split('');
    const newArr = [];
    for(let i = numArr.length - 1; i > 0; i--){

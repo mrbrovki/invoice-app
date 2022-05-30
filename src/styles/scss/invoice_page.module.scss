@@ -1,0 +1,249 @@
+@import 'breakpoints';
+@import 'variables';
+
+p {
+ margin: 0;
+}
+
+.page_container{
+ max-width: 80rem;
+ margin: 0 auto;
+
+ .btn_container_light,
+ .btn_container_dark {
+ 
+   button {
+    background: none;
+    border: none;
+    text-transform: capitalize;
+    font-weight: 600;
+   }
+  }
+ 
+  .btn_container_light {
+ 
+   button {
+    color: $clr-black;
+   }
+  }
+ 
+  .btn_container_dark {
+ 
+   button {
+    color: $clr-white;
+   }
+  }
+
+  .header_container_light,
+  .header_container_dark{
+    margin-top: 1rem;
+    height: 6rem;
+    border-radius: 10px;
+  }
+
+  .header_container_light,
+  .invoice_container_light{
+   background-color: $clr-white;
+  }
+
+  .header_container_dark,
+  .invoice_container_dark{
+   background-color: $invoice-dark-bg; 
+  }
+
+  .invoice_container_light,
+  .invoice_container_dark{
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   grid-auto-rows: repeat(3, 5rem) 20rem;
+   grid-gap: 1rem;
+   margin-top: 1rem;
+   border-radius: 10px;
+   padding: 2rem;
+
+    .sender_adress{
+     justify-self: right;
+     
+     div{
+       text-align: right;
+     }
+   }
+
+  }
+}
+
+.id{
+ grid-area: 1 / 1 / 2 / 4;
+ 
+ span{
+  font-size: 1.5rem;
+ }
+
+ &::before{
+  content: '#';
+  font-size: 1.5rem;
+ }
+}
+
+.create_date_container{
+ grid-area: 2 / 1 / 3 / 2;
+}
+
+.due_date_container{
+ grid-area: 3 / 1 / 4 / 2;
+}
+
+.bill_to_container{
+ grid-area: 2 / 2 / 4 / 3;
+}
+
+.sent_to{
+ grid-area: 2 / 3 / 3 / 4;
+}
+
+.total_container{
+  grid-area: 4 / 1 / 5 / 5;
+  border-radius: 20px;
+  min-height: 13rem;
+  
+ table{
+  width: 100%;
+  min-height: 6rem;
+  padding: 2rem;
+  thead{
+   
+    th:nth-child(1){
+      text-align: left;
+    }
+
+    th:nth-child(2){
+      text-align: center;
+    }
+    th:nth-child(3),
+    th:nth-child(4){
+      text-align: right;
+    }
+  }
+
+  tbody{
+    
+    tr{
+      td:nth-child(1) {
+          text-align: left;
+        }
+      
+        td:nth-child(2) {
+          text-align: center;
+        }
+      
+        td:nth-child(3),
+        td:nth-child(4) {
+          text-align: right;
+        }
+    }
+  }
+ }
+
+ .amount_due_container{
+   height: 5em;
+   padding: 0 2rem;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   overflow: hidden;
+
+   .total{
+     font-size: 2rem;
+     color: $clr-white;
+   }
+ }
+}
+
+.invoice_container_light{
+  p,
+  span {
+    color: $clr-black;
+  }
+
+  address {
+    color: #b3b3b3;
+  }
+
+  .id{
+
+    &::before{
+      color: #b3b3b3;
+    }
+    p {
+      color: #b3b3b3;
+    }
+  }
+
+  div {
+    p:first-child {
+      color: #b3b3b3;
+    }
+  }
+
+  .total_container{
+    background-color: $items-container-light;
+
+    .amount_due_container {
+        background-color: $invoice-dark-bg;
+    }
+  }
+}
+
+.invoice_container_dark{
+  p,
+  span {
+    color: $clr-white;
+  }
+
+  address {
+    color: #e4e4e4ba;
+  }
+
+  .id{
+
+    &::before{
+      color: #e4e4e4ba;
+    }
+
+    p{
+      color: #e4e4e4ba;
+    }
+  }
+  div {
+    p:first-child {
+      color: #e4e4e4ba;
+    }
+  } 
+  
+  .total_container{
+    background-color: $items-container-dark;
+
+    .amount_due_container{
+      background-color: $clr-black;
+    }
+  }
+}
+
+.invoice_container_light,
+.invoice_container_dark{
+
+  address{
+    font-size: 0.9rem;
+    font-style: normal;
+    font-weight: 100;
+  }
+  div{
+    p:first-child{
+      font-size: 0.9rem;
+      font-weight: 100;
+    }
+  }
+}
+.big{
+  font-size: 1.2rem;
+}
